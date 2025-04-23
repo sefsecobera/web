@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Descargas - Supervisión EF Oberá</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Material para Descargar</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="descargas.html">Descargas</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="descargas">
+            <h2>Archivos disponibles</h2>
+            <button onclick="descargar('archivos/planificacion2025.pdf')">Descargar Planificación 2025 (PDF)</button>
+            <button onclick="descargar('archivos/guia_actividades.docx')">Descargar Guía de Actividades (Word)</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Supervisión de Educación Física - Oberá</p>
+    </footer>
+
+    <script>
+        function descargar(archivo) {
+            window.location.href = archivo;
+        }
+    </script>
+</body>
+</html>

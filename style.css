@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #006699;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.presentacion img {
+    width: 100%;
+    height: auto;
+}
+
+.carrusel {
+    overflow: hidden;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.slider {
+    display: flex;
+    animation: mover 10s infinite linear;
+}
+
+.slider img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 5px;
+}
+
+@keyframes mover {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.descargas button {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-contacto {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-contacto label {
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #006699;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
