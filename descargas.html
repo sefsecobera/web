@@ -3,7 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>Descargas - Supervisión EF Oberá</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #0077b6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .botonera {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .botonera button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #00b4d8;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .botonera button:hover {
+            background-color: #0096c7;
+            transform: scale(1.03);
+        }
+
+        footer {
+            background-color: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,8 +85,20 @@
     <main>
         <section class="descargas">
             <h2>Archivos disponibles</h2>
-            <button onclick="descargar('archivos/planificacion2025.pdf')">Descargar Planificación 2025 (PDF)</button>
-            <button onclick="descargar('archivos/guia_actividades.docx')">Descargar Guía de Actividades (Word)</button>
+            <div class="botonera">
+                <button onclick="descargar('archivos/planificacion2025.pdf')">Planificación 2025 (PDF)</button>
+                <button onclick="descargar('archivos/guia_actividades.docx')">Guía de Actividades (Word)</button>
+                <button onclick="descargar('archivos/reglamento.pdf')">Reglamento (PDF)</button>
+                <button onclick="descargar('archivos/modelo_evaluacion.xlsx')">Modelo Evaluación (Excel)</button>
+                <button onclick="descargar('archivos/presentacion.pptx')">Presentación (PowerPoint)</button>
+                <button onclick="descargar('archivos/cronograma.pdf')">Cronograma (PDF)</button>
+                <button onclick="descargar('archivos/formulario_inscripcion.docx')">Formulario Inscripción</button>
+                <button onclick="descargar('archivos/lista_control.xlsx')">Lista de Control</button>
+                <button onclick="descargar('archivos/manual_usuario.pdf')">Manual de Usuario</button>
+                <button onclick="descargar('archivos/plan_clases.docx')">Plan de Clases</button>
+                <button onclick="descargar('archivos/checklist_equipamiento.xlsx')">Checklist Equipamiento</button>
+                <button onclick="descargar('archivos/informe_final.pdf')">Informe Final</button>
+            </div>
         </section>
     </main>
 
