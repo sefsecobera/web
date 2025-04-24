@@ -2,35 +2,33 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Descargas - Supervisión EF Oberá</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargas - Supervisión de Educación Física</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <header>
-        <h1>Material para Descargar</h1>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="descargas.html">Descargas</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
+    <!-- Cabecera -->
+    <header class="bg-primary text-white text-center py-5">
+        <h1>Recursos Educativos</h1>
+        <p>Materiales para docentes y estudiantes</p>
     </header>
 
-    <main>
-        <section class="descargas">
-            <h2>Archivos disponibles</h2>
-            <button onclick="descargar('archivos/planificacion2025.pdf')">Descargar Planificación 2025 (PDF)</button>
-            <button onclick="descargar('archivos/guia_actividades.docx')">Descargar Guía de Actividades (Word)</button>
-        </section>
-    </main>
+    <!-- Contenido de descargas -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <a href="#" class="btn btn-outline-success w-100" onclick="alert('Descargando material 1')">Material 1</a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="#" class="btn btn-outline-success w-100" onclick="alert('Descargando material 2')">Material 2</a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="#" class="btn btn-outline-success w-100" onclick="alert('Descargando material 3')">Material 3</a>
+            </div>
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Supervisión de Educación Física - Oberá</p>
-    </footer>
-
-    <script>
-        function descargar(archivo) {
-            window.location.href = archivo;
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
