@@ -18,9 +18,8 @@ nav a {
 }
 
 .presentacion img {
-    width: auto;
-    height: 60%;
-}
+    width: 100%;
+    height: auto;
 
 .carrusel {
     overflow: hidden;
