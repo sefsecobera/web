@@ -17,6 +17,14 @@ nav a {
     text-decoration: none;
 }
 
+.correo {
+    margin-top: 5px%;
+    margin-bottom: 5px;
+    color: blue;
+    font-weight: bold;
+    text-align: center;
+}
+
 .presentacion img {
     width: 100%;
     height: auto;
@@ -24,7 +32,7 @@ nav a {
 .carrusel {
     overflow: hidden;
     width: 100%;
-    margin: 20px 0;
+    margin: 0;
 }
 
 .slider {
