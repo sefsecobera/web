@@ -17,7 +17,7 @@ nav a {
     text-decoration: none;
 }
 
-.presentacion img {
+/*.presentacion img {
     width: 100%;
     height: auto;
 }
@@ -27,7 +27,7 @@ nav a {
     width: 100%;
     margin: 20px 0;
 }
-
+*/
 .slider {
     display: flex;
     animation: mover 10s infinite linear;
@@ -39,6 +39,72 @@ nav a {
     height: auto;
     margin: 0 5px;
 }
+
+/* Carrusel en index */
+.carousel {
+    display: flex;
+    gap: 1em;
+    max-width: 100%;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 1em 0;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .carousel::-webkit-scrollbar {
+    display: none; /* Chrome */
+  }
+  
+  .arrow {
+    font-size: 2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  /* Tarjetones */
+  .tarjeton {
+    min-width: 250px;
+    max-width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tarjeton img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-top: 0.5em;
+  }
+  
+  /* Admin lista */
+  #listaTarjetones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 2em;
+    justify-content: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  form input, form textarea, form button {
+    padding: 0.5em;
+    font-size: 1em;
+  }
 
 @keyframes mover {
     0% { transform: translateX(0); }

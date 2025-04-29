@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Tarjetones</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Administrar Tarjetones</h1>
+  </header>
+
+  <main>
+    <form id="formTarjeton">
+      <input type="text" id="titulo" placeholder="Título" required />
+      <textarea id="descripcion" placeholder="Descripción" required></textarea>
+      <input type="url" id="imagen" placeholder="URL de imagen" required />
+      <button type="submit">Guardar</button>
+    </form>
+
+    <section id="listaTarjetones"></section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
