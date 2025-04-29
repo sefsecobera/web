@@ -17,17 +17,24 @@ nav a {
     text-decoration: none;
 }
 
-/*.presentacion img {
+.correo {
+    margin-top: 5px%;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.presentacion img {
     width: 100%;
     height: auto;
 }
-
 .carrusel {
     overflow: hidden;
     width: 100%;
-    margin: 20px 0;
+    margin: 0;
 }
-*/
+
 .slider {
     display: flex;
     animation: mover 10s infinite linear;
@@ -40,76 +47,57 @@ nav a {
     margin: 0 5px;
 }
 
-/* Carrusel en index */
-.carousel {
-    display: flex;
-    gap: 1em;
-    max-width: 100%;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    padding: 1em 0;
-    scrollbar-width: none; /* Firefox */
-  }
-  
-  .carousel::-webkit-scrollbar {
-    display: none; /* Chrome */
-  }
-  
-  .arrow {
-    font-size: 2rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: #333;
-  }
-  
-  /* Tarjetones */
-  .tarjeton {
-    min-width: 250px;
-    max-width: 250px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background: white;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .tarjeton img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-top: 0.5em;
-  }
-  
-  /* Admin lista */
-  #listaTarjetones {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    margin-top: 2em;
-    justify-content: center;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  form input, form textarea, form button {
-    padding: 0.5em;
-    font-size: 1em;
-  }
-
 @keyframes mover {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
 }
+/* Carrousel de tarjetas */
+.carrusel-tarjetas {
+    margin-top: 40px;
+}
+
+.slider-tarjetas {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+}
+
+.tarjeta {
+    flex: 0 0 auto;
+    width: 250px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    font-size: 1em;
+    color: #555;
+}
+
+.tarjeta:hover {
+    transform: scale(1.05);
+}
+
+/* Asegura que el carrusel de tarjetas se vea bien en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .slider-tarjetas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta {
+        width: 80%;
+        margin-bottom: 20px;
+    }
 
 .descargas button {
     display: block;
@@ -129,7 +117,7 @@ nav a {
     margin: 10px 0;
 }
 
-footer {
+/*footer {
     background-color: #006699;
     color: white;
     text-align: center;
@@ -137,4 +125,4 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-}
+}*/
