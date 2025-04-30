@@ -20,8 +20,92 @@
     </form>
 
     <section id="listaTarjetones"></section>
-  </main>
+    <!-- AGREGO FUNCIONALIDAD FIREBASE-->
 
-  <script src="admin.js"></script>
+    <script type="module">
+      // 1. Importar SDK de Firebase desde el CDN
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+      import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+  
+      // 2. Configuración de tu proyecto (reemplaza con tus claves reales)
+      const firebaseConfig = {
+        apiKey: "AIzaSyBjY2h8KFfYYMKX0UkdFTeJdTYWuQ9Qd2o",
+        authDomain: "tarjetonesapp.firebaseapp.com",
+        projectId: "tarjetonesapp",
+        storageBucket: "tarjetonesapp.firebasestorage.app",
+        messagingSenderId: "295553636718",
+        appId: "1:295553636718:web:2537c9338c49ac6a3c497f"
+      };
+  
+      // 3. Inicializar Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+  
+      const form = document.getElementById("formTarjeton");
+      const lista = document.getElementById("listaTarjetones");
+  
+      // 4. Función para guardar un tarjetón en Firestore
+      form.onsubmit = async (e) => {
+        e.preventDefault();
+        const titulo = document.getElementById("titulo").value;
+        const descripcion = document.getElementById("descripcion").value;
+        const imagen = document.getElementById("imagen").value;
+  
+        try {
+          await addDoc(collection(db, "tarjetones"), {
+            titulo,
+            descripcion,
+            imagen
+          });
+          form.reset();
+          cargarTarjetones();
+        } catch (error) {
+          console.error("Error al guardar:", error);
+        }
+      };
+  
+      // 5. Función para mostrar tarjetones desde Firestore
+      async function cargarTarjetones() {
+        lista.innerHTML = "";
+        const querySnapshot = await getDocs(collection(db, "tarjetones"));
+        querySnapshot.forEach((doc) => {
+          const t = doc.data();
+          const card = document.createElement("div");
+          card.className = "tarjeton";
+          card.innerHTML = `
+            <h3>${t.titulo}</h3>
+            <p>${t.descripcion}</p>
+            <img src="${t.imagen}" alt="Imagen" />
+          `;
+          lista.appendChild(card);
+        });
+      }
+  
+      window.onload = cargarTarjetones;
+    </script>
+
+  </main>
+  
+  <!-- <script src="admin.js"></script> -->
 </body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBjY2h8KFfYYMKX0UkdFTeJdTYWuQ9Qd2o",
+    authDomain: "tarjetonesapp.firebaseapp.com",
+    projectId: "tarjetonesapp",
+    storageBucket: "tarjetonesapp.firebasestorage.app",
+    messagingSenderId: "295553636718",
+    appId: "1:295553636718:web:2537c9338c49ac6a3c497f"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
 </html>
