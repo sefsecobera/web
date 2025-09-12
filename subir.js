@@ -13,10 +13,10 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
   const reader = new FileReader();
 
   reader.onloadend = function () {
-    const base64Data = reader.result.split(',')[1]; // Eliminar encabezado data:image/...
+    const base64Data = reader.result.split(',')[1];
 
-    // Reemplazá esta URL con la de tu Web App
-    const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbxCPmcOpYiwI7xYfx2cJw72kZbuFsF37xTVZ6Gy8bBwZjBT7ChaQcohhxg_IBiHUGII/exec";
+    // ✅ Reemplazá con tu propia URL de Web App de Google Apps Script
+    const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbxXXXXX.../exec";
 
     const formData = new URLSearchParams();
     formData.append("imagen", base64Data);
@@ -35,16 +35,6 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
     .then(response => response.json())
     .then(data => {
       if (data.status === "success") {
-        const nuevoItem = {
-          escuela,
-          cuise,
-          imagen: data.url
-        };
-
-        const tarjetones = JSON.parse(localStorage.getItem("tarjetones")) || [];
-        tarjetones.push(nuevoItem);
-        localStorage.setItem("tarjetones", JSON.stringify(tarjetones));
-
         document.getElementById("mensaje").textContent = "Imagen subida correctamente.";
         document.getElementById("formularioImagen").reset();
       } else {
@@ -59,8 +49,3 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
 
   reader.readAsDataURL(imagen);
 });
-
-
-
-
-
