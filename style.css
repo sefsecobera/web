@@ -83,6 +83,14 @@ nav a {
     border-radius: 4px;
     margin-top: 0.5em;
   }
+
+  .tarjeton .info {
+  margin-top: 0.5em;
+  text-align: center;
+  font-size: 0.9em;
+  color: #333;
+}
+
   
   /* Admin lista */
   #listaTarjetones {
