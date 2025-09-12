@@ -16,7 +16,7 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
     const base64Data = reader.result.split(',')[1];
 
     // ✅ Reemplazá con tu propia URL de Web App de Google Apps Script
-    const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbx12345abcdef67890/exec";
+    const URL_WEB_APP = "https://script.google.com/macros/s/1U6p-a2lFfD1A69GBW5kXRn26t06Z_Ecx";
 
 
     const formData = new URLSearchParams();
@@ -50,6 +50,7 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
 
   reader.readAsDataURL(imagen);
 });
+
 
 
 
