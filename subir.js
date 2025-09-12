@@ -19,7 +19,7 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
   formData.append("tipo", imagen.type);
 
   // ⚠️ Reemplazá esto con la URL del despliegue del Web App
-  const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbXXXXXXXXXXXXXXXXXXXX/exec";
+  const URL_WEB_APP = "https://script.google.com/home/projects/1MYowK66UYfickmYDhrN_kjf3DjofEo_2y5KwWv2cQYQTkZqWIx9WIsgr/edit";
 
   fetch(URL_WEB_APP, {
     method: "POST",
@@ -39,6 +39,7 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
       alert("Error al subir la imagen.");
     });
 });
+
 
 
 
