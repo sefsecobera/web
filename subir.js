@@ -12,11 +12,9 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
   }
 
   const formData = new FormData();
-  formData.append("escuela", escuela);
-  formData.append("cuise", cuise);
-  formData.append("imagen", imagen);
-  formData.append("nombre", imagen.name);
-  formData.append("tipo", imagen.type);
+formData.append("escuela", escuela);
+formData.append("cuise", cuise);
+formData.append("imagen", imagen); 
 
   // ⚠️ Reemplazá esto con la URL del despliegue del Web App
   const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbyTb7u8Fjk3Ts7V6UYU_AT8mnNuHZHJcePVl6gnVxvduqsxVBB6jgdkOqesnWeYHgyT/exec";
@@ -39,6 +37,7 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
       alert("Error al subir la imagen.");
     });
 });
+
 
 
 
