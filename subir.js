@@ -16,7 +16,7 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
     const base64Data = reader.result.split(',')[1]; // Eliminar encabezado data:image/...
 
     // Reemplazá esta URL con la de tu Web App
-    const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbwexYr8FFoiLoQ7o_TLKNfRpJWOc8PObkr2NWFbXzD_gjuDS6KuxKQqtPzijDVY30HS/exec";
+    const URL_WEB_APP = "https://drive.google.com/drive/folders/1U6p-a2lFfD1A69GBW5kXRn26t06Z_Ecx?usp=sharing";
 
     const formData = new URLSearchParams();
     formData.append("imagen", base64Data);
@@ -59,3 +59,4 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
 
   reader.readAsDataURL(imagen);
 });
+
