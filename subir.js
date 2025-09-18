@@ -23,7 +23,7 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
       archivo: base64
     };
 
-    const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbyTb7u8Fjk3Ts7V6UYU_AT8mnNuHZHJcePVl6gnVxvduqsxVBB6jgdkOqesnWeYHgyT/exec";
+    const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbzrSSsCA7hvFdY846JvI4RPqTzwPb2NpIUDPK7FywBfWg9WDIj-xNNmvPI43TNjGj1U/exec";
 
     fetch(URL_WEB_APP, {
       method: "POST",
@@ -49,6 +49,7 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
 
   lector.readAsDataURL(imagen);
 });
+
 
 
 
