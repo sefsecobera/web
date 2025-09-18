@@ -11,31 +11,43 @@ document.getElementById("formularioImagen").addEventListener("submit", function 
     return;
   }
 
-  const formData = new FormData();
-formData.append("escuela", escuela);
-formData.append("cuise", cuise);
-formData.append("imagen", imagen); 
+  const lector = new FileReader();
+  lector.onload = function () {
+    const base64 = lector.result.split(",")[1]; // sacamos el encabezado del dataURL
 
-  // ⚠️ Reemplazá esto con la URL del despliegue del Web App
-  const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbyTb7u8Fjk3Ts7V6UYU_AT8mnNuHZHJcePVl6gnVxvduqsxVBB6jgdkOqesnWeYHgyT/exec";
+    const payload = {
+      escuela: escuela,
+      cuise: cuise,
+      nombre: imagen.name,
+      tipo: imagen.type,
+      archivo: base64
+    };
 
-  fetch(URL_WEB_APP, {
-    method: "POST",
-    body: formData
-  })
-    .then(res => res.json())
-    .then(data => {
-      if (data.status === "success") {
-        document.getElementById("mensaje").textContent = "Imagen subida correctamente.";
-        form.reset();
-      } else {
-        alert("Error al subir: " + data.message);
+    const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbyTb7u8Fjk3Ts7V6UYU_AT8mnNuHZHJcePVl6gnVxvduqsxVBB6jgdkOqesnWeYHgyT/exec";
+
+    fetch(URL_WEB_APP, {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        "Content-Type": "application/json"
       }
     })
-    .catch(err => {
-      console.error("Error:", err);
-      alert("Error al subir la imagen.");
-    });
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === "success") {
+          document.getElementById("mensaje").textContent = "Imagen subida correctamente.";
+          form.reset();
+        } else {
+          alert("Error al subir: " + data.message);
+        }
+      })
+      .catch(err => {
+        console.error("Error:", err);
+        alert("Error al subir la imagen.");
+      });
+  };
+
+  lector.readAsDataURL(imagen);
 });
 
 
